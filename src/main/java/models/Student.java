@@ -1,13 +1,18 @@
 package models;
 
+import java.util.Random;
+import java.util.UUID;
+
 public class Student {
+    private static int nextId = 1;
     private int id;
     private String name;
 
-    public Student(int id, String name) {
-        this.id = id;
+    public Student(String name) {
+        this.id = nextId++;
         this.name = name;
     }
+
 
     public int id() {
         return id;
@@ -28,8 +33,8 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "id: " + id +
+                ", name: '" + name + '\'' +
                 '}';
     }
 }

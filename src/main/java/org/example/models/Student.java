@@ -1,4 +1,4 @@
-package models;
+package org.example.models;
 
 import java.util.Random;
 import java.util.UUID;
@@ -13,6 +13,9 @@ public class Student {
         this.name = name;
     }
 
+    public Student() {
+        this.id = nextId++;
+    }
 
     public int id() {
         return id;

@@ -1,6 +1,6 @@
-package data_access;
+package org.example.data_access;
 
-import models.Student;
+import org.example.models.Student;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Component
 public class StudentDaoListImpl implements StudentDao {
-    private List<Student> studentList;
+    private List<Student> studentList = new ArrayList();
 
     @Override
     public Student save(Student student) {
@@ -34,8 +34,8 @@ public class StudentDaoListImpl implements StudentDao {
     @Override
     public void delete(int id) {
         if (find(id) != null) {
-            studentList.remove(id);
-        }else{
+            studentList.remove(find(id));
+        } else {
             System.out.println("There is no student with this Id.");
         }
     }

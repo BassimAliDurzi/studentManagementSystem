@@ -1,11 +1,9 @@
-package data_access;
+package org.example.data_access;
 
-import models.Student;
-import org.springframework.stereotype.Component;
+import org.example.models.Student;
 
 import java.util.List;
 
-@Component
 public interface StudentDao {
     Student save(Student student);
     Student find(int id);

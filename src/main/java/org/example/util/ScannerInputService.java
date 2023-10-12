@@ -1,12 +1,13 @@
-package util;
+package org.example.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 @Component
-public class ScannerInputService implements UserInputService{
+public class ScannerInputService implements UserInputService {
 
     private Scanner scanner;
 
@@ -14,13 +15,18 @@ public class ScannerInputService implements UserInputService{
     public ScannerInputService(Scanner scanner) {
         this.scanner = scanner;
     }
+
     @Override
     public String getString() {
-        return null;
+        System.out.println("Enter student's name:");
+        String name = scanner.next();
+        return name;
     }
 
     @Override
     public int getInt() {
-        return 0;
+        System.out.println("Enter student's ID:");
+        int id = scanner.nextInt();
+        return id;
     }
 }
